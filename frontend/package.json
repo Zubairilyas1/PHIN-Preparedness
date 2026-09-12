@@ -1,0 +1,32 @@
+{
+  "name": "om-frontend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Outbreak Management System - Frontend",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3",
+    "axios": "^1.6.7",
+    "chart.js": "^4.4.2",
+    "react-chartjs-2": "^5.2.0",
+    "zod": "^3.22.4",
+    "@hookform/resolvers": "^3.3.4",
+    "react-hook-form": "^7.51.0",
+    "react-hot-toast": "^2.4.1",
+    "lucide-react": "^0.344.0",
+    "framer-motion": "^11.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.1.6",
+    "tailwindcss": "^3.4.1",
+    "postcss": "^8.4.35",
+    "autoprefixer": "^10.4.17"
+  }
+}

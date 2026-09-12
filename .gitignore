@@ -1,0 +1,97 @@
+# ============================================================
+# Dependencies
+# ============================================================
+node_modules/
+
+# ============================================================
+# Build Output
+# ============================================================
+dist/
+dist-ssr/
+build/
+
+# ============================================================
+# 🔒 SENSITIVE / SECRET FILES — NEVER COMMIT
+# ============================================================
+# Credentials and session data
+backend/login.json
+backend/cookies.txt
+*.json.credentials
+.env
+.env.*
+!.env.example
+
+# ============================================================
+# Binary / Large Generated Assets
+# ============================================================
+# SQLite database files (runtime data, not source)
+database/outbreak.sqlite
+**/*.sqlite
+**/*.db
+
+# WebAssembly binaries (should be installed via npm, not committed)
+backend/sql-wasm.wasm
+backend/db/sql-wasm.wasm
+**/*.wasm
+
+# ============================================================
+# Documents & Office Files (irrelevant to source code)
+# ============================================================
+*.docx
+*.doc
+*.xlsx
+*.xls
+*.pptx
+*.ppt
+*.pdf
+
+# Word lock / temp files (hidden temp files Word creates)
+~$*.docx
+~$*.doc
+~$*.xlsx
+~$*.pptx
+
+# Misc text scratch files
+New Text Document.txt
+*.tmp
+
+# HTML exports / one-off generated reports
+document.html
+
+# One-off / scratch Python scripts (not part of the app)
+ss.py
+update_analytics.py
+
+# ============================================================
+# SonarQube / Static Analysis
+# ============================================================
+.scannerwork/
+
+# ============================================================
+# Logs
+# ============================================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ============================================================
+# Editor & OS
+# ============================================================
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ============================================================
+# Misc
+# ============================================================
+*.local

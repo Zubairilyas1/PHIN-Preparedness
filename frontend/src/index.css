@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8fafc;
+}
+
+code {
+  font-family: 'JetBrains Mono', Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.toast-container {
+  z-index: 9999;
+}
+
+.chart-container {
+  position: relative;
+  height: 400px;
+  width: 100%;
+}
+
+/* Custom Animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.dark .animate-shimmer {
+  background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+  background-size: 200% 100%;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Focus Visible for Keyboard Navigation */
+:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background: #3b82f6;
+  color: white;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  :root {
+    --color-blue-600: #1d4ed8;
+    --color-gray-900: #000;
+  }
+}
+
+/* Custom Properties for Theme Colors */
+:root {
+  --color-blue-400: #60a5fa;
+  --color-blue-600: #2563eb;
+  --color-emerald-400: #34d399;
+  --color-emerald-600: #059669;
+  --color-violet-400: #a78bfa;
+  --color-violet-600: #7c3aed;
+  --color-amber-400: #fbbf24;
+  --color-amber-600: #d97706;
+  --color-rose-400: #fb7185;
+  --color-rose-600: #e11d48;
+}
+
+/* Form Field Focus States */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+/* Button Loading State */
+button:disabled {
+  cursor: not-allowed;
+}
+
+/* Modal Backdrop Blur Support */
+@supports (backdrop-filter: blur(8px)) {
+  .backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+  }
+  .backdrop-blur-md {
+    backdrop-filter: blur(8px);
+  }
+  .backdrop-blur-xl {
+    backdrop-filter: blur(24px);
+  }
+}
+
+/* Card Hover Effects */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Table Row Transitions */
+.table-row {
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+/* Sidebar Animation */
+.sidebar-enter {
+  animation: slideIn 0.3s ease-out;
+}
+
+.sidebar-exit {
+  animation: slideOut 0.3s ease-in;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+/* Toast Animation */
+.toast-enter {
+  animation: toastIn 0.3s ease-out;
+}
+
+.toast-exit {
+  animation: toastOut 0.3s ease-in;
+}
+
+@keyframes toastIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toastOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Density Classes */
+[data-density="comfortable"] {
+  --spacing-multiplier: 1;
+}
+
+[data-density="compact"] {
+  --spacing-multiplier: 0.75;
+}
+
+[data-density="spacious"] {
+  --spacing-multiplier: 1.25;
+}
+
+/* Animation Toggle */
+[data-animations="disabled"] * {
+  animation-duration: 0.01ms !important;
+  transition-duration: 0.01ms !important;
+}
+
+/* Chart.js Custom Tooltip */
+.chartjs-tooltip {
+  background: rgba(17, 17, 17, 0.9) !important;
+  border-radius: 8px !important;
+  padding: 12px 16px !important;
+  box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1) !important;
+}
+
+.chartjs-tooltip-body {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13px !important;
+}
+
+.chartjs-tooltip-title {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  margin-bottom: 8px !important;
+}
